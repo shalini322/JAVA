@@ -1,0 +1,128 @@
+1. 
+public class ascii {
+    public static void main(String[] args) {
+        System.out.println("Hello World \n");
+	System.out.printIn (“Java is Great”);
+    }
+}
+
+2.
+import java.util.Scanner;
+
+public class integer {
+    public static void main(String[] args) {
+        Scanner sc = new Scanner(System.in);
+        int n = 5;
+        System.out.println("original value: "+n);
+        n = 7;
+        System.out.println("updated value: "+n);
+    }
+}
+
+3.
+import java.util.Scanner;
+
+public class operations {
+    public static void main(String[] args) {
+        Scanner sc = new Scanner(System.in);
+        // Integers
+        int num1Int = 10;
+        int num2Int = 5;
+
+        // Floats
+        float num1Float = 10.5f;
+        float num2Float = 2.5f;
+
+        // Doubles
+        double num1Double = 15.75;
+        double num2Double = 3.5;
+
+        // Addition
+        System.out.println("Addition Results:");
+        System.out.println("Integers: " + (num1Int + num2Int));
+        System.out.println("Floats: " + (num1Float + num2Float));
+        System.out.println("Doubles: " + (num1Double + num2Double));
+
+        // Subtraction
+        System.out.println("\nSubtraction Results:");
+        System.out.println("Integers: " + (num1Int - num2Int));
+        System.out.println("Floats: " + (num1Float - num2Float));
+        System.out.println("Doubles: " + (num1Double - num2Double));
+
+        // Multiplication
+        System.out.println("\nMultiplication Results:");
+        System.out.println("Integers: " + (num1Int * num2Int));
+        System.out.println("Floats: " + (num1Float * num2Float));
+        System.out.println("Doubles: " + (num1Double * num2Double));
+
+        // Division
+        System.out.println("\nDivision Results:");
+        System.out.println("Integers: " + (num1Int / num2Int));
+        System.out.println("Floats: " + (num1Float / num2Float));
+        System.out.println("Doubles: " + (num1Double / num2Double));
+    }
+}
+
+4.
+import java.util.Scanner;
+
+public class operators {
+    public static void main(String[] args) {
+        Scanner sc = new Scanner(System.in);
+        int n = 4;
+        System.out.println("after increment: " + (++n));
+        System.out.println("after decrement: " + (--n));
+        System.out.println("modulus: " + (n % 2));
+    }
+}
+
+5.
+import java.util.Scanner;
+
+public class CircleAndInterestCalculator {
+    public static void main(String[] args) {
+        Scanner scanner = new Scanner(System.in);
+
+        // Calculate the area of a circle
+        System.out.print("Enter the radius of the circle: ");
+        double radius = scanner.nextDouble();
+        double circleArea = Math.PI * Math.pow(radius, 2);
+        System.out.println("Area of the circle: " + circleArea);
+
+        // Calculate simple interest
+        System.out.print("\nEnter principal amount: ");
+        double principal = scanner.nextDouble();
+
+        System.out.print("Enter the rate of interest (in percentage): ");
+        double rateOfInterest = scanner.nextDouble() / 100;
+
+        System.out.print("Enter the time period (in years): ");
+        double timePeriod = scanner.nextDouble();
+
+        double simpleInterest = (principal * rateOfInterest * timePeriod);
+        System.out.println("Simple Interest: " + simpleInterest);
+
+        scanner.close();
+    }
+}
+
+6.
+public class NumberComparison {
+    public static void main(String[] args) {
+        // Given variable values
+        int age = 25;
+        double averageScore = 92.5;
+
+        // Comparisons using boolean variables and relational operators
+        boolean areNumbersEqual = age == averageScore;
+        boolean areNumbersNotEqual = age != averageScore;
+        boolean isFirstNumberGreater = age > averageScore;
+        boolean isFirstNumberLess = age < averageScore;
+
+        // Print the comparison results
+        System.out.println("Are numbers equal? " + areNumbersEqual);
+        System.out.println("Are numbers not equal? " + areNumbersNotEqual);
+        System.out.println("Is the first number greater? " + isFirstNumberGreater);
+        System.out.println("Is the first number less? " + isFirstNumberLess);
+    }
+}
