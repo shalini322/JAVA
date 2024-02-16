@@ -1,0 +1,98 @@
+// 2. Second Largest Element
+
+public class secondLargest {
+    public static void main(String[] args) {
+        int[] arr = {12, 45, 20, 67, 89, 83, 75};
+        int n = arr.length;
+        int largest = Integer.MIN_VALUE;
+        int secondLargest = Integer.MIN_VALUE;
+        for (int i=0; i<n; i++){
+            if (arr[i]>largest){
+                secondLargest = largest;
+                largest = arr[i];
+            }
+            if (arr[i]<largest && arr[i]>secondLargest){
+                secondLargest = arr[i];
+            }
+        }
+        System.out.println("second largest element is: "+ secondLargest);
+    }
+}
+
+
+// 3. Find the minimum value out of all elements in the array.
+
+import java.util.Scanner;
+
+public class minElement {
+    public static void main(String[] args) {
+        Scanner sc = new Scanner(System.in);
+        System.out.println("enter array size:");
+        int n = sc.nextInt();
+        System.out.println("enter array elements:");
+        int[] arr = new int[n];
+        for (int i = 0; i < n; i++) {
+            arr[i] = sc.nextInt();
+        }
+        int min = arr[0];
+        for (int i = 0; i < n; i++) {
+            if (arr[i] < min) {
+                min = arr[i];
+            }
+        }
+        System.out.println("minimum element is:" + min);
+    }
+}
+
+
+// 4. WAP to find the duplicate elements from the given array of elements.
+
+import java.util.Scanner;
+
+public class duplicateElement {
+    public static void main(String[] args) {
+        Scanner sc = new Scanner(System.in);
+        System.out.println("enter array size:");
+        int n = sc.nextInt();
+        System.out.println("enter array elements:");
+        int[] arr = new int[n];
+        for (int i = 0; i < n; i++) {
+            arr[i] = sc.nextInt();
+        }
+        for (int i=0; i<n; i++){
+            for (int j=i+1; j<n; j++){
+                if (arr[i] == arr[j]){
+                    System.out.println("duplicate element is: "+arr[i]);
+                }
+            }
+        }
+}
+
+
+// 6. Count the number of elements strictly greater than x.
+
+import java.util.Scanner;
+
+public class greaterThan {
+    public static void main(String[] args) {
+        Scanner sc = new Scanner(System.in);
+        System.out.println("enter array size:");
+        int n = sc.nextInt();
+        System.out.println("enter array elements:");
+        int[] arr = new int[n];
+        for (int i = 0; i < n; i++) {
+            arr[i] = sc.nextInt();
+        }
+        System.out.println("enter x:");
+        int x = sc.nextInt();
+        int c = 0;
+        for (int i = 0; i < n; i++) {
+            if (arr[i] > x) c++;
+        }
+        System.out.println("no of elements are: " + c);
+    }
+}
+
+
+// 7. WAP to find the largest three elements in the array.
+
