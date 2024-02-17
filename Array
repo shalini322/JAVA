@@ -189,6 +189,94 @@ public class arraySortedOrNot {
 }
 
 
-// 11. Find the unique number in a given Array where all the elements are being repeated twice with one value
-being unique.
+// 12. If an array arr contains n elements, then check if the given array is a palindrome or not .
 
+import java.util.Scanner;
+
+public class palindromeArray {
+    public static void main(String[] args) {
+        Scanner sc = new Scanner(System.in);
+        System.out.println("enter array size:");
+        int n = sc.nextInt();
+        System.out.println("enter array elements:");
+        int[] arr = new int[n];
+        for (int i = 0; i < n; i++) {
+            arr[i] = sc.nextInt();
+        }
+        boolean flag = true;
+        int i = 0;
+        int j = n-1;
+        while (i<=j){
+            if (arr[i++] != arr[j--]){
+                flag = false;
+            }
+        }
+        if (flag == true) System.out.println("palindrome array");
+        else System.out.println("not palindrome array");
+    }
+}
+
+
+
+// 14. You are given two integer arrays nums1 and nums2, sorted in non-decreasing order, and two integers m
+and n, representing the number of elements in nums1 and nums2 respectively.
+Merge nums1 and nums2 into a single array sorted in non-decreasing order.
+
+
+import java.util.Scanner;
+
+public class ques14 {
+    
+    public static void merge(int[] mergedArray, int[] nums1, int[] nums2){
+        int i = 0, j = 0, k = 0;
+
+        while(i < nums1.length && j < nums2.length){
+            if(nums1[i] <= nums2[j]) mergedArray[k++] = nums1[i++];
+            else mergedArray[k++] = nums2[j++];
+        }
+
+        while(i < nums1.length){
+            mergedArray[k++] = nums1[i++];
+        }
+
+        while(j < nums2.length){
+            mergedArray[k++] = nums2[j++];
+        }
+
+        return;
+    }
+
+    public static void main(String[] args) {
+        Scanner sc = new Scanner(System.in);
+
+        System.out.print("Enter m : ");
+        int m = sc.nextInt();
+
+        int[] nums1 = new int[m];
+
+        System.out.print("Enter elements of the first array : ");
+        for (int i = 0; i < nums1.length; i++) {
+            nums1[i] = sc.nextInt();
+        }
+
+        System.out.print("Enter n : ");
+        int n = sc.nextInt();
+
+        int[] nums2 = new int[n];
+
+        System.out.print("Enter elements of the second array : ");
+        for (int i = 0; i < nums2.length; i++) {
+            nums2[i] = sc.nextInt();
+        }
+
+        int[] mergedArray = new int[m + n];
+
+        merge(mergedArray, nums1, nums2);
+
+        for (int i : mergedArray) {
+            System.out.print(i + " ");
+        }
+
+        sc.close();
+    }
+}
