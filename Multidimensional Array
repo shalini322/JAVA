@@ -1,0 +1,166 @@
+// 1. Write a program to store 10 at every index of a 2D matrix with 5 rows and 5 columns.
+
+import java.util.Scanner;
+
+public class storeTen {
+    public static void main(String[] args) {
+        Scanner sc = new Scanner(System.in);
+        int[][] arr = new int[5][5];
+        for (int i = 0; i < arr.length; i++) {
+            for (int j = 0; j < arr[0].length; j++) {
+                arr[i][j] = 10;
+            }
+        }
+        for (int i = 0; i < arr.length; i++) {
+            for (int j = 0; j < arr[0].length; j++) {
+                System.out.print(arr[i][j] + " ");
+            }
+            System.out.println();
+        }
+
+    }
+}
+
+
+// 4. Write a program to find the largest element of a given 2D array of integers.
+
+import java.util.Scanner;
+
+public class largestElement {
+    public static void main(String[] args) {
+        Scanner sc = new Scanner(System.in);
+        System.out.println("enter the no of rows: ");
+        int r = sc.nextInt();
+        System.out.println("enter the no of cols: ");
+        int c = sc.nextInt();
+        int[][] arr = new int[r][c];
+        System.out.println("enter the elements: ");
+        for (int i = 0; i < arr.length; i++) {
+            for (int j = 0; j < arr[0].length; j++) {
+                arr[i][j] = sc.nextInt();
+            }
+        }
+        int max = arr[0][0];
+        for (int i = 0; i < arr.length; i++) {
+            for (int j = 0; j < arr[0].length; j++) {
+                if (arr[i][j] > max) {
+                    max = arr[i][j];
+                }
+            }
+        }
+
+        for (int i = 0; i < arr.length; i++) {
+            for (int j = 0; j < arr[0].length; j++) {
+                System.out.print(arr[i][j] + " ");
+            }
+            System.out.println();
+        }
+        System.out.println();
+        System.out.print("max element is: "+max);
+    }
+}
+
+
+// 5. Write a program to print the row number having the maximum sum in a given matrix.
+
+import java.util.Scanner;
+
+public class maxSumInRow {
+    public static void main(String[] args) {
+        Scanner sc = new Scanner(System.in);
+        System.out.println("enter the no of rows: ");
+        int r = sc.nextInt();
+        System.out.println("enter the no of cols: ");
+        int c = sc.nextInt();
+        int[][] arr = new int[r][c];
+        System.out.println("enter the elements: ");
+        for (int i = 0; i < arr.length; i++) {
+            for (int j = 0; j < arr[0].length; j++) {
+                arr[i][j] = sc.nextInt();
+            }
+        }
+        for (int i = 0; i < arr.length; i++) {
+            for (int j = 0; j < arr[0].length; j++) {
+                System.out.print(arr[i][j] + " ");
+            }
+            System.out.println();
+        }
+        int maxSum = Integer.MIN_VALUE;
+        int maxSumRow = -1;
+        for (int i = 0; i < arr.length; i++) {
+            int s = 0;
+            for (int j = 0; j < arr[0].length; j++) {
+                s += arr[i][j];
+            }
+            if (s > maxSum) {
+                maxSum = s;
+                maxSumRow = i;
+            }
+        }
+        System.out.println("max sum is "+maxSum);
+        System.out.println("max sum row is "+maxSumRow);
+    }
+
+}
+
+
+// 13. Given an m x n integer matrix matrix, if an element is 0, set its entire row and column to 0's. You must do it in place.
+
+import java.util.Scanner;
+
+public class setRowsToZero {
+    public static void main(String[] args) {
+        Scanner sc = new Scanner(System.in);
+        System.out.println("enter the no of rows: ");
+        int r = sc.nextInt();
+        System.out.println("enter the no of cols: ");
+        int c = sc.nextInt();
+        int[][] arr = new int[r][c];
+        System.out.println("enter the elements: ");
+        for (int i = 0; i < arr.length; i++) {
+            for (int j = 0; j < arr[0].length; j++) {
+                arr[i][j] = sc.nextInt();
+            }
+        }
+        for (int i = 0; i < arr.length; i++) {
+            for (int j = 0; j < arr[0].length; j++) {
+                System.out.print(arr[i][j] + " ");
+            }
+            System.out.println();
+        }
+        boolean[] row = new boolean[arr.length];
+        boolean[] col = new boolean[arr[0].length];
+        for (int i = 0; i < arr.length; i++) {
+            for (int j = 0; j < arr[0].length; j++) {
+                if (arr[i][j] == 0){
+                    row[i] = true;
+                    col[j] = true;
+                }
+            }
+        }
+        for (int i = 0; i < arr.length; i++) {
+            if (row[i] == true){
+                for (int j = 0; j < arr[0].length; j++) {
+                    arr[i][j] = 0;
+                }
+            }
+        }
+        for (int j = 0; j < arr[0].length; j++) {
+            if (col[j] == true){
+                for (int i = 0; i < arr.length; i++) {
+                    arr[i][j] = 0;
+                }
+            }
+        }
+        System.out.println();
+        for (int i = 0; i < arr.length; i++) {
+            for (int j = 0; j < arr[0].length; j++) {
+                System.out.print(arr[i][j] + " ");
+            }
+            System.out.println();
+        }
+    }
+}
+
+
+
