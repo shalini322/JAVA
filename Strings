@@ -43,3 +43,30 @@ public class noOfConsonents {
 }
 
 
+// Q3. Check whether the given string is palindrome or not.
+
+import java.util.Scanner;
+
+public class palindromeString {
+    public static void main(String[] args) {
+        Scanner sc = new Scanner(System.in);
+        System.out.println("enter a string:");
+        String s = sc.next();
+        char[] ch = s.toCharArray();
+        int i = 0;
+        int j = ch.length-1;
+        boolean flag = false;
+        while (i<j){
+            if (ch[i] == ch[j]){
+                flag = true;
+            }
+            i++;
+            j--;
+        }
+        if (flag == true) System.out.println("palindrome string");
+        else System.out.println("non palindrome string");
+    }
+}
+
+
+
